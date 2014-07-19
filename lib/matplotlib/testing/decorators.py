@@ -303,7 +303,10 @@ def _image_directories(func):
         assert mods.pop(0) == 'tests'
         subdir = os.path.join(*mods)
 
-        import imp
+        if sys.version_info >= (3, 4):
+            import importlib as imp
+        else:
+            import imp
         def find_dotted_module(module_name, path=None):
             """A version of imp which can handle dots in the module name"""
             res = None

@@ -183,7 +183,10 @@ try:
     reload
 except NameError:
     # Python 3
-    from imp import reload
+    if sys.version_info >= (3, 4):
+        from importlib import reload
+    else:
+        from imp import reload
 
 
 if not hasattr(sys, 'argv'):  # for modpython

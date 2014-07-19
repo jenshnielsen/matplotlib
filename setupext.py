@@ -777,7 +777,11 @@ class Numpy(SetupPackage):
                 del builtins.__NUMPY_SETUP__
             import imp
             import numpy
-            imp.reload(numpy)
+            if sys.version_info >= (3, 4):
+                from importlib import reload
+            else:
+                from imp import reload
+            reload(numpy)
         else:
             import __builtin__
             if hasattr(__builtin__, '__NUMPY_SETUP__'):
