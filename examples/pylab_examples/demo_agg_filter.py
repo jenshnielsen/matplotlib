@@ -106,7 +106,7 @@ from matplotlib.colors import LightSource
 class LightFilter(BaseFilter):
     "simple gauss filter"
 
-    def __init__(self, sigma, fraction=0.5):
+    def __init__(self, sigma, fraction=1):
         self.gauss_filter = GaussianFilter(sigma, alpha=1)
         self.light_source = LightSource()
         self.fraction = fraction
