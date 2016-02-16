@@ -110,7 +110,7 @@ def test_scatter3d():
                c='b', marker='^')
 
 
-@image_comparison(baseline_images=['surface3d'], remove_text=True)
+@image_comparison(baseline_images=['surface3d'], remove_text=True, tol=0.04)
 def test_surface3d():
     fig = plt.figure()
     ax = fig.gca(projection='3d')
@@ -149,7 +149,7 @@ def test_text3d():
     ax.set_zlabel('Z axis')
 
 
-@image_comparison(baseline_images=['trisurf3d'], remove_text=True)
+@image_comparison(baseline_images=['trisurf3d'], remove_text=True, tol=0.03)
 def test_trisurf3d():
     n_angles = 36
     n_radii = 8
