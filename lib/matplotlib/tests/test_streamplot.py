@@ -17,7 +17,8 @@ def velocity_field():
     return X, Y, U, V
 
 
-@image_comparison(baseline_images=['streamplot_colormap_test_image'])
+@image_comparison(baseline_images=['streamplot_colormap_test_image'],
+                  tol=0.165)
 def test_colormap():
     X, Y, U, V = velocity_field()
     plt.streamplot(X, Y, U, V, color=U, density=0.6, linewidth=2,
