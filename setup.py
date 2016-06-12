@@ -69,6 +69,7 @@ mpl_packages = [
     setupext.Numpy(),
     setupext.Dateutil(),
     setupext.FuncTools32(),
+    setupext.Subprocess32(),
     setupext.Pytz(),
     setupext.Cycler(),
     setupext.Tornado(),
