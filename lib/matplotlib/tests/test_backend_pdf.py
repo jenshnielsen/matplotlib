@@ -25,9 +25,18 @@ if 'TRAVIS' not in os.environ:
         rcParams['font.sans-serif'] = ['Helvetica']
         rcParams['pdf.compression'] = 0
 
+        title = u'Test PDF backend with option use14corefonts=True'
+
         text = '''A three-line text positioned just above a blue line
     and containing some French characters and the euro symbol:
     "Merci pépé pour les 10 €"'''
+
+        plt.figure()
+        plt.title(title)
+        plt.text(0.5, 0.5, text, horizontalalignment='center',
+                 verticalalignment='bottom',
+                 fontsize=24)
+        plt.axhline(0.5, linewidth=0.5)
 
 
 @cleanup
